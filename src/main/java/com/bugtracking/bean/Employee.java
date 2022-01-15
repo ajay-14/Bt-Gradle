@@ -23,8 +23,6 @@ public class Employee {
 	@ApiModelProperty("Employee contactno should not be empty")
 	@NotEmpty
 	private String empContactNo;
-//	@Min(value = 1, message = "minimum value must be 1")
-//	private long projectId;
 
 	public long getEmpId() {
 		return empId;
@@ -58,25 +56,17 @@ public class Employee {
 		this.empContactNo = empContactNo;
 	}
 
-//	public long getProjectId() {
-//		return projectId;
-//	}
-//
-//	public void setProjectId(long projectId) {
-//		this.projectId = projectId;
-//	}
 
 	public Employee() {
 
 	}
 
-	public Employee(long empId, String empName, String empEmail, String empContactNo, long projectId) {
+	public Employee(long empId, String empName, String empEmail, String empContactNo) {
 		super();
 		this.empId = empId;
 		this.empEmail = empEmail;
 		this.empName = empName;
 		this.empContactNo = empContactNo;
-//		this.projectId = projectId;
 	}
 
 }

@@ -51,7 +51,6 @@ public class EmployeeServiceImplTest {
 		employeeDto.setEmpContactNo("1234");
 		employeeDto.setEmpEmail("ssls");
 		employeeDto.setEmpName("ss");
-//		employeeDto.setProjectId(11l);
 
 	}
 

@@ -6,7 +6,6 @@ public class EmployeeDto {
 	private String empName;
 	private String empEmail;
 	private String empContactNo;
-	//private long projectId;
 
 	public long getEmpId() {
 		return empId;
@@ -39,22 +38,12 @@ public class EmployeeDto {
 	public void setEmpContactNo(String empContactNo) {
 		this.empContactNo = empContactNo;
 	}
-//
-//	public long getProjectId() {
-//		return projectId;
-//	}
-//
-//	public void setProjectId(long projectId) {
-//		this.projectId = projectId;
-//	}
-
-	public EmployeeDto(long empId, String empName, String empEmail, String empContactNo, long projectId) {
+	public EmployeeDto(long empId, String empName, String empEmail, String empContactNo) {
 		super();
 		this.empId = empId;
 		this.empName = empName;
 		this.empEmail = empEmail;
 		this.empContactNo = empContactNo;
-//		this.projectId = projectId;
 	}
 
 	public EmployeeDto() {
