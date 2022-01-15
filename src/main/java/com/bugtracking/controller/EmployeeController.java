@@ -59,20 +59,4 @@ public class EmployeeController {
 		return es.updateEmployee(empId, e);
 	}
 
-	@ApiOperation("Used to fetch bugs by status(BY EMPLOYEE)")
-	@GetMapping("/employees/bystatus/{bugStatus}")
-	public List<Bug> bugsbystatus(@PathVariable("bugStatus") String bugStatus) {
-		String endpointEmpBug = "http://localhost:8055/bugs/bystatus/" + bugStatus;
-		List<Bug> m = Arrays.asList(rt.getForObject(endpointEmpBug, Bug[].class));
-		return m;
-	}
-
-	@ApiOperation("Used to create bug(BY EMPLOYEE)")
-	@PostMapping("/employee/bugs")
-	public String createBug(@Valid @RequestBody Bug b) {
-		String endpointEmp = "http://localhost:8055/bugs/";
-		rt.postForLocation(endpointEmp, b);
-		return "created successfully";
-	}
-
 }

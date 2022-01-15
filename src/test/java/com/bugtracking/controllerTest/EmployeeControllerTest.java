@@ -32,7 +32,7 @@ public class EmployeeControllerTest {
 		employeeDto.setEmpName("aravi");
 		employeeDto.setEmpEmail("aravicoder@gmail.com");
 		employeeDto.setEmpContactNo("8123456789");
-		employeeDto.setProjectId(321);
+//		employeeDto.setProjectId(321);
 	}
 
 	@InjectMocks

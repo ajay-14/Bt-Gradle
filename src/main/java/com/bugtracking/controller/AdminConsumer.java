@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Api
 @RestController
-public class AdminController {
+public class AdminConsumer {
 	RestTemplate rt = new RestTemplate();
 
 	String endpointBug = "http://localhost:8055/bugs/";

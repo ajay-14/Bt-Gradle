@@ -14,7 +14,7 @@ public class EmployeeMapper {
 		employee.setEmpName(employeeDto.getEmpName());
 		employee.setEmpEmail(employeeDto.getEmpEmail());
 		employee.setEmpContactNo(employeeDto.getEmpContactNo());
-		employee.setProjectId(employeeDto.getProjectId());
+//		employee.setProjectId(employeeDto.getProjectId());
 		return employee;
 	}
 	
@@ -24,7 +24,7 @@ public class EmployeeMapper {
 		employeeDto.setEmpName(employee.getEmpName());
 		employeeDto.setEmpEmail(employee.getEmpEmail());
 		employeeDto.setEmpContactNo(employee.getEmpContactNo());
-		employeeDto.setProjectId(employee.getProjectId());
+//		employeeDto.setProjectId(employee.getProjectId());
 		return employeeDto;
 	}
 	
