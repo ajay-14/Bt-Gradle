@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.bugtracking.bean.Bug;
+import com.bugtracking.dto.BugDto;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -22,15 +22,15 @@ public class EmployeeConsumer {
 	
 	@ApiOperation("Used to fetch bugs by status(BY EMPLOYEE)")
 	@GetMapping("/employees/bystatus/{bugStatus}")
-	public List<Bug> bugsbystatus(@PathVariable("bugStatus") String bugStatus) {
+	public List<BugDto> bugsbystatus(@PathVariable("bugStatus") String bugStatus) {
 		String endpointEmpBug = "http://localhost:8055/bugs/bystatus/" + bugStatus;
-		List<Bug> m = Arrays.asList(rt.getForObject(endpointEmpBug, Bug[].class));
+		List<BugDto> m = Arrays.asList(rt.getForObject(endpointEmpBug, BugDto[].class));
 		return m;
 	}
 
 	@ApiOperation("Used to create bug(BY EMPLOYEE)")
 	@PostMapping("/employee/bugs")
-	public String createBug(@Valid @RequestBody Bug b) {
+	public String createBug(@Valid @RequestBody BugDto b) {
 		String endpointEmp = "http://localhost:8055/bugs/";
 		rt.postForLocation(endpointEmp, b);
 		return "created successfully";

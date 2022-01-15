@@ -1,6 +1,5 @@
 package com.bugtracking.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.bugtracking.bean.Bug;
 import com.bugtracking.dto.EmployeeDto;
 import com.bugtracking.services.IEmployeeService;
 

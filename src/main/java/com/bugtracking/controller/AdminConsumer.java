@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.bugtracking.bean.Bug;
 import com.bugtracking.bean.Project;
 import com.bugtracking.dto.BugDto;
 import com.bugtracking.dto.EmployeeDto;
@@ -31,14 +29,13 @@ public class AdminConsumer {
 	String endpointBug = "http://localhost:8055/bugs/";
 	String endpointEmployee = "http://localhost:8055/employees/";
 	String endpointProject = "http://localhost:8055/projects/";
+
 	@GetMapping("/admin/bugs")
 	@ApiOperation("used to fetch all bugs(BY ADMIN)")
 	public List<BugDto> getAllBugs() {
 		List<BugDto> m = Arrays.asList(rt.getForObject(endpointBug, BugDto[].class));
 		System.out.println("bala kiruku bunda");
 		return m;
-		
-		
 	}
 
 	@ApiOperation("Used to fetch bug with particular id(BY ADMIN)")
@@ -58,7 +55,7 @@ public class AdminConsumer {
 
 	@ApiOperation("Used to update bug(BY ADMIN)")
 	@PutMapping("/admin/bugs/{bugId}")
-	public String updateBug(@PathVariable long bugId, @Valid @RequestBody Bug b) {
+	public String updateBug(@PathVariable long bugId, @Valid @RequestBody BugDto b) {
 		String bug = endpointBug + bugId;
 		rt.put(bug, b);
 		return "updated successfully";
